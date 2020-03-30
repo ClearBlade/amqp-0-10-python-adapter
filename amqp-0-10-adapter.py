@@ -107,7 +107,7 @@ if __name__ == '__main__':
                 amqp_receive_session.acknowledge()
                 full_message = {}
                 if ADAPTER_CONFIG["adapter_settings"]["force_hex_content"]:
-                    full_message["content"] = message.content.encode("utf-8").encode("hex")
+                    full_message["content"] = message.content.encode("hex")
                 else:
                     full_message["content"] = str(message.content)
                 # only send optional message properties that are set, if key is missing then we assume null/None
